@@ -9,13 +9,12 @@
   export let good = false;
 
   $: frame = good ? new Rectangle(4, 5, 13, 13) : new Rectangle(18, 5, 13, 13);
-  const scale = 5;
 
   function toggle() {
     good = !good;
   }
 </script>
 
-<Texture resource="base" let:texture {frame}>
-  <Sprite interactive {texture} {scale} {x} {y} on:click={toggle} />
+<Texture src="base.png" let:texture {frame}>
+  <Sprite interactive {texture} {x} {y} on:click={toggle} />
 </Texture>
